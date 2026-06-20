@@ -390,6 +390,30 @@
     .photo-card:hover .photo-overlay { opacity:1; }
     .photo-zoom { color:var(--white); font-size:1.3rem; }
 
+    /* Sapo decoraciones de sección */
+    .sec-deco {
+      position: absolute;
+      right: 2rem; top: 2.5rem;
+      pointer-events: none; user-select: none;
+      opacity: 0.18;
+      animation: floatDeco 7s ease-in-out infinite;
+    }
+    .sec-deco-img {
+      width: 110px;
+      filter: drop-shadow(0 4px 12px rgba(58,46,36,0.12));
+    }
+    #experiencia { position: relative; }
+
+    .therapy-sapo {
+      position: absolute;
+      bottom: -8px; left: -12px;
+      width: 90px;
+      opacity: 0.22;
+      pointer-events: none;
+      animation: floatDeco 6s ease-in-out infinite;
+      filter: drop-shadow(0 4px 10px rgba(58,46,36,0.1));
+    }
+
     /* LinkedIn */
     .linkedin-section {
       display: flex;
@@ -576,10 +600,10 @@
   <!-- ─── HERO ─── -->
   <section id="hero">
     <div class="h-deco h-deco-1">🍄</div>
-    <div class="h-deco h-deco-2"><img src="imagenes/sapo.jpeg" class="sapo-img" alt=""></div>
+    <div class="h-deco h-deco-2"><img src="imagenes/sapo_manchado.png" class="sapo-img" alt=""></div>
     <div class="h-float hf1">🍄</div>
-    <div class="h-float hf2"><img src="imagenes/sapo.jpeg" class="sapo-img" alt=""></div>
-    <div class="h-float hf3">🌿</div>
+    <div class="h-float hf2"><img src="imagenes/sapo_mini.png" class="sapo-img" alt=""></div>
+    <div class="h-float hf3"><img src="imagenes/sapo_flores.png" class="sapo-img" alt=""></div>
     <div class="h-float hf4">🍄</div>
 
     <div class="hero-inner">
@@ -591,7 +615,7 @@
         especialmente en la vida de mujeres y comunidades de Lima.
       </p>
       <div class="hero-tags">
-        <span class="htag htag-g"><img src="imagenes/sapo.jpeg" class="sapo-inline" alt=""> Trabajo comunitario</span>
+        <span class="htag htag-g"><img src="imagenes/sapo_abrazo.png" class="sapo-inline" alt=""> Trabajo comunitario</span>
         <span class="htag htag-b">🌸 Perspectiva de género</span>
         <span class="htag htag-l">🍄 Orientación y Consejería</span>
         <span class="htag htag-m">🌿 Educación popular</span>
@@ -613,7 +637,7 @@
             <img class="profile-img"
                  src="PERFIL/perfil.jpeg"
                  alt="Katherine Ramos - Psicóloga Social">
-            <span class="profile-float pf2"><img src="imagenes/sapo.jpeg" class="sapo-img" alt=""></span>
+            <span class="profile-float pf2"><img src="imagenes/sapo_pizza.png" class="sapo-img" alt=""></span>
           </div>
           <p class="profile-caption">✨ Katherine Ramos · Lima, Perú</p>
         </div>
@@ -639,7 +663,7 @@
             y derechos humanos.
           </p>
           <div class="bio-chips">
-            <span class="chip"><img src="imagenes/sapo.jpeg" class="sapo-inline" alt=""> Psicología comunitaria</span>
+            <span class="chip"><img src="imagenes/sapo_flores.png" class="sapo-inline" alt=""> Psicología comunitaria</span>
             <span class="chip">🌸 Perspectiva de género</span>
             <span class="chip">🍄 Talleres psicoeducativos</span>
             <span class="chip">🌿 Orientación y Consejería</span>
@@ -656,6 +680,10 @@
       <p class="sec-label reveal">Mi recorrido</p>
       <h2 class="sec-title reveal">Experiencia con la comunidad</h2>
       <div class="sec-rule reveal"></div>
+
+      <div class="sec-deco" aria-hidden="true">
+        <img src="imagenes/sapo_pincel.png" class="sec-deco-img" alt="">
+      </div>
 
       <div class="tabs-bar reveal">
         <button class="tab-btn active" onclick="showTab('aahh',this)">🏘️ Trabajo Comunitario</button>
@@ -742,7 +770,8 @@
       <h2 class="sec-title reveal">Contacto</h2>
       <div class="sec-rule reveal"></div>
 
-      <div class="therapy-box reveal">
+      <div class="therapy-box reveal" style="position:relative;">
+        <img src="imagenes/sapo_impermeable.png" class="therapy-sapo" alt="" aria-hidden="true">
         <h3>🍄 Sesiones de Orientación y Consejería</h3>
         <p>
           ¿Buscas un espacio seguro para trabajar en tu bienestar emocional?
@@ -776,9 +805,11 @@
 </main>
 
 <!-- ─── FOOTER ─── -->
-<footer>
+<footer style="position:relative; overflow:hidden;">
+  <img src="imagenes/sapo_torre.png" alt="" aria-hidden="true"
+       style="position:absolute;bottom:0;right:1rem;width:80px;opacity:0.13;pointer-events:none;">
   <p class="ft-title">Psic. Katherine Ramos · Psicóloga Social</p>
-  <p><img src="imagenes/sapo.jpeg" class="sapo-inline" alt=""> Lima, Perú &nbsp;·&nbsp; 🍄 Orientación y Consejería &nbsp;·&nbsp; 🌿 Comunidad</p>
+  <p><img src="imagenes/sapo_sonrisa.png" class="sapo-inline" alt=""> Lima, Perú &nbsp;·&nbsp; 🍄 Orientación y Consejería &nbsp;·&nbsp; 🌿 Comunidad</p>
   <p>
     <a href="https://wa.me/51952351862" target="_blank">WhatsApp</a>
     &nbsp;·&nbsp;
