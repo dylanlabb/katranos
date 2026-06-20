@@ -7,8 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
   <style>
-    /* ─── VARIABLES ─── */
     :root {
       --cream:          #FFF8F0;
       --sage:           #6E9B6E;
@@ -42,7 +42,6 @@
       line-height: 1.65;
     }
 
-    /* ─── ANIMACIONES DE ENTRADA (suaves, no bloqueantes) ─── */
     @keyframes riseIn {
       from { opacity:0; transform:translateY(20px); }
       to   { opacity:1; transform:translateY(0); }
@@ -113,7 +112,6 @@
     .nav-cta::after { display:none !important; }
     .nav-cta:hover { background:var(--sage-dark) !important; transform:translateY(-2px); }
 
-    /* Hamburger */
     .nav-burger {
       display:none; flex-direction:column; gap:5px;
       cursor:pointer; background:none; border:none; padding:4px;
@@ -141,16 +139,14 @@
       overflow: hidden;
     }
 
-    /* Decoraciones de fondo ligeras */
     .h-deco {
       position:absolute; font-size:7rem;
       opacity:0.07; pointer-events:none; user-select:none;
       animation: floatDeco 8s ease-in-out infinite;
     }
-    .h-deco-1 { bottom:5%; right:3%;  animation-delay:0s; }
-    .h-deco-2 { top:8%;  left:2%;  animation-delay:2.5s; font-size:5.5rem; }
+    .h-deco-1 { bottom:5%; right:3%; animation-delay:0s; }
+    .h-deco-2 { top:8%;  left:2%; animation-delay:2.5s; font-size:5.5rem; }
 
-    /* Decoraciones flotantes pequeñas */
     .h-float {
       position:absolute; pointer-events:none; user-select:none;
       animation: floatDeco 5s ease-in-out infinite;
@@ -160,6 +156,19 @@
     .hf2 { top:65%; left:6%;   animation-delay:1.2s; font-size:1.5rem; }
     .hf3 { top:25%; left:10%;  animation-delay:2s;   font-size:1.4rem; }
     .hf4 { bottom:20%; right:12%; animation-delay:0.8s; }
+
+    .sapo-img {
+      width: 1em; height: 1em;
+      object-fit: cover;
+      vertical-align: middle;
+      border-radius: 8px;
+    }
+    .sapo-inline {
+      width: 1.3em; height: 1.3em;
+      object-fit: cover;
+      vertical-align: -0.25em;
+      border-radius: 6px;
+    }
 
     .hero-inner {
       position:relative; z-index:1;
@@ -192,28 +201,6 @@
     }
     .hero h1 em { color:var(--sage); font-style:italic; }
 
-    /* Frase en el hero — no bloquea, es parte del contenido */
-    .hero-quote {
-      font-size: clamp(0.88rem, 1.8vw, 1.05rem);
-      font-style: italic;
-      color: var(--text-light);
-      line-height: 1.7;
-      background: rgba(255,255,255,0.6);
-      backdrop-filter:blur(6px);
-      border-left: 3px solid var(--blush);
-      border-radius: 0.8rem;
-      padding: 0.9rem 1.4rem;
-      margin: 0 auto 1.3rem;
-      max-width: 520px;
-      text-align: left;
-    }
-    .hero-quote cite {
-      display:block; margin-top:0.4rem;
-      font-style:normal; font-size:0.78rem;
-      color:var(--text-muted); font-weight:700;
-      letter-spacing:0.05em;
-    }
-
     .hero-desc {
       font-size: clamp(0.95rem, 2vw, 1.1rem);
       color: var(--text-light);
@@ -226,6 +213,7 @@
       display: flex; flex-wrap:wrap; gap:0.6rem; justify-content:center;
     }
     .htag {
+      display: inline-flex; align-items: center; gap: 0.35rem;
       padding: 0.35rem 0.9rem;
       border-radius: 50px;
       font-size: 0.82rem;
@@ -258,7 +246,6 @@
       border-radius:2px; margin-bottom:2rem;
     }
 
-    /* Reveal on scroll */
     .reveal {
       opacity:0; transform:translateY(22px);
       transition: opacity 0.6s ease, transform 0.6s ease;
@@ -276,7 +263,6 @@
     }
 
     .profile-wrap { position:relative; display:flex; flex-direction:column; align-items:center; }
-
     .profile-frame { position:relative; width:260px; }
 
     .profile-img {
@@ -375,7 +361,6 @@
     }
     .subsec-header p { color:var(--text-light); font-size:0.9rem; }
 
-    /* Photo grid */
     .photo-grid {
       display:grid;
       grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));
@@ -405,6 +390,37 @@
     .photo-card:hover .photo-overlay { opacity:1; }
     .photo-zoom { color:var(--white); font-size:1.3rem; }
 
+    /* LinkedIn */
+    .linkedin-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.5rem 1rem 2rem;
+    }
+    .linkedin-badge-wrap {
+      display: flex;
+      justify-content: center;
+    }
+    .linkedin-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.9rem 2rem;
+      background: #0077B5;
+      color: #fff;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1rem;
+      box-shadow: 0 5px 20px rgba(0,119,181,0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .linkedin-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0,119,181,0.45);
+    }
+
     /* ─── LIGHTBOX ─── */
     #lightbox {
       position:fixed; inset:0; z-index:3000;
@@ -432,7 +448,7 @@
 
     .contact-cards {
       display:grid; grid-template-columns:1fr 1fr;
-      gap:1.2rem; margin-bottom:2rem;
+      gap:1.2rem; margin-top:2rem;
     }
     .contact-card {
       display:flex; flex-direction:column; align-items:center;
@@ -503,7 +519,6 @@
       .pf2 { left:-5px; }
     }
     @media (max-width: 700px) {
-      /* Nav mobile */
       .nav-links {
         display:none; position:absolute;
         top:100%; left:0; right:0;
@@ -560,11 +575,10 @@
 
   <!-- ─── HERO ─── -->
   <section id="hero">
-    <!-- Decoraciones de fondo -->
     <div class="h-deco h-deco-1">🍄</div>
-    <div class="h-deco h-deco-2">🐸</div>
+    <div class="h-deco h-deco-2"><img src="imagenes/sapo.jpeg" class="sapo-img" alt=""></div>
     <div class="h-float hf1">🍄</div>
-    <div class="h-float hf2">🐸</div>
+    <div class="h-float hf2"><img src="imagenes/sapo.jpeg" class="sapo-img" alt=""></div>
     <div class="h-float hf3">🌿</div>
     <div class="h-float hf4">🍄</div>
 
@@ -577,9 +591,9 @@
         especialmente en la vida de mujeres y comunidades de Lima.
       </p>
       <div class="hero-tags">
-        <span class="htag htag-g">🐸 Trabajo comunitario</span>
+        <span class="htag htag-g"><img src="imagenes/sapo.jpeg" class="sapo-inline" alt=""> Trabajo comunitario</span>
         <span class="htag htag-b">🌸 Perspectiva de género</span>
-        <span class="htag htag-l">🍄 Psicoterapia</span>
+        <span class="htag htag-l">🍄 Orientación y Consejería</span>
         <span class="htag htag-m">🌿 Educación popular</span>
       </div>
     </div>
@@ -593,19 +607,17 @@
       <div class="sec-rule reveal"></div>
 
       <div class="sobre-grid">
-        <!-- Foto de perfil -->
         <div class="profile-wrap reveal">
           <div class="profile-frame">
             <span class="profile-float pf1">🍄</span>
             <img class="profile-img"
                  src="PERFIL/perfil.jpeg"
                  alt="Katherine Ramos - Psicóloga Social">
-            <span class="profile-float pf2">🐸</span>
+            <span class="profile-float pf2"><img src="imagenes/sapo.jpeg" class="sapo-img" alt=""></span>
           </div>
           <p class="profile-caption">✨ Katherine Ramos · Lima, Perú</p>
         </div>
 
-        <!-- Bio -->
         <div class="bio reveal">
           <h2>Hola, soy <em style="color:var(--sage);font-style:italic;">Katherine</em> 🌿</h2>
           <p class="bio-role">Psicóloga Social · Activista · Lima, Perú</p>
@@ -616,21 +628,21 @@
             de liberación y transformación social.
           </p>
           <p>
-            He trabajado en asentamientos humanos de Lima, facilitando talleres psicoeducativos
+            He trabajado en poblaciones vulnerables de Lima, facilitando talleres psicoeducativos
             y acompañando a niñas, adolescentes y mujeres. Participo activamente en programas
             de formación feminista y en iniciativas de cuidado colectivo que buscan abordar
             las violencias estructurales que enfrentan las mujeres.
           </p>
           <p>
-            También ofrezco sesiones de <strong>psicoterapia privada</strong> en un espacio
-            de escucha seguro, cálido y libre de juicios — con perspectiva de género
+            También ofrezco sesiones de <strong>orientación y consejería</strong> en un espacio
+            de escucha seguro, cálido y libre de juicios, con perspectiva de género
             y derechos humanos.
           </p>
           <div class="bio-chips">
-            <span class="chip">🐸 Psicología comunitaria</span>
+            <span class="chip"><img src="imagenes/sapo.jpeg" class="sapo-inline" alt=""> Psicología comunitaria</span>
             <span class="chip">🌸 Perspectiva de género</span>
             <span class="chip">🍄 Talleres psicoeducativos</span>
-            <span class="chip">🌿 Psicoterapia individual</span>
+            <span class="chip">🌿 Orientación y Consejería</span>
             <span class="chip">✊ Activismo</span>
           </div>
         </div>
@@ -646,19 +658,19 @@
       <div class="sec-rule reveal"></div>
 
       <div class="tabs-bar reveal">
-        <button class="tab-btn active" onclick="showTab('aahh',this)">🏘️ Trabajo comunitario en AAHH</button>
+        <button class="tab-btn active" onclick="showTab('aahh',this)">🏘️ Trabajo Comunitario</button>
         <button class="tab-btn"        onclick="showTab('talleres',this)">📚 Talleres psicoeducativos</button>
-        <button class="tab-btn"        onclick="showTab('feminista',this)">🌸 Lucha feminista</button>
+        <button class="tab-btn"        onclick="showTab('feminista',this)">🌸 Enfoque de género</button>
         <button class="tab-btn"        onclick="showTab('academica',this)">🎓 Formación académica</button>
       </div>
 
-      <!-- AAHH -->
+      <!-- Trabajo Comunitario -->
       <div class="subsec active" id="tab-aahh">
         <div class="subsec-header">
           <span class="subsec-icon">🏘️</span>
           <div>
-            <h3>Trabajo comunitario en AAHH</h3>
-            <p>Intervenciones directas en asentamientos humanos — acercando la salud mental a quienes más la necesitan.</p>
+            <h3>Trabajo Comunitario</h3>
+            <p>Intervenciones directas en poblaciones vulnerables, acercando la salud mental a quienes más la necesitan.</p>
           </div>
         </div>
         <div class="photo-grid" id="grid-aahh"></div>
@@ -676,19 +688,19 @@
         <div class="photo-grid" id="grid-talleres"></div>
       </div>
 
-      <!-- Feminista -->
+      <!-- Enfoque de género -->
       <div class="subsec" id="tab-feminista">
         <div class="subsec-header">
           <span class="subsec-icon">🌸</span>
           <div>
-            <h3>Lucha feminista</h3>
+            <h3>Enfoque de género</h3>
             <p>Formación, debate y acción colectiva por los derechos y la autonomía de las mujeres.</p>
           </div>
         </div>
         <div class="photo-grid" id="grid-feminista"></div>
       </div>
 
-      <!-- Académica -->
+      <!-- Formación académica con LinkedIn -->
       <div class="subsec" id="tab-academica">
         <div class="subsec-header">
           <span class="subsec-icon">🎓</span>
@@ -696,6 +708,27 @@
             <h3>Formación académica</h3>
             <p>Crecimiento profesional en la intersección entre psicología, comunidad y justicia social.</p>
           </div>
+        </div>
+        <div class="linkedin-section">
+          <div class="linkedin-badge-wrap">
+            <div class="badge-base LI-profile-badge"
+                 data-locale="es_ES"
+                 data-size="large"
+                 data-theme="light"
+                 data-type="VERTICAL"
+                 data-vanity="katherine-mishel-ramos-castro-839140306"
+                 data-version="v1">
+              <a class="badge-base__link LI-simple-link"
+                 href="https://www.linkedin.com/in/katherine-mishel-ramos-castro-839140306"
+                 target="_blank" rel="noopener">
+                Ver perfil de Katherine Ramos
+              </a>
+            </div>
+          </div>
+          <a href="https://www.linkedin.com/in/katherine-mishel-ramos-castro-839140306"
+             target="_blank" rel="noopener" class="linkedin-btn">
+            🔗 Ver perfil completo en LinkedIn
+          </a>
         </div>
         <div class="photo-grid" id="grid-academica"></div>
       </div>
@@ -709,12 +742,25 @@
       <h2 class="sec-title reveal">Contacto</h2>
       <div class="sec-rule reveal"></div>
 
+      <div class="therapy-box reveal">
+        <h3>🍄 Sesiones de Orientación y Consejería</h3>
+        <p>
+          ¿Buscas un espacio seguro para trabajar en tu bienestar emocional?
+          Ofrezco sesiones individuales con perspectiva de género y enfoque en
+          derechos humanos, en un espacio cálido, confidencial y libre de juicios.
+        </p>
+        <a href="https://wa.me/51952351862?text=Hola%20Katherine%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20orientaci%C3%B3n%20y%20consejer%C3%ADa%20%F0%9F%8C%BF"
+           target="_blank" rel="noopener" class="therapy-btn">
+          💬 Solicitar una sesión
+        </a>
+      </div>
+
       <div class="contact-cards reveal">
         <a href="https://wa.me/51952351862" target="_blank" rel="noopener" class="contact-card cc-wa">
           <div class="cc-icon">💬</div>
           <h3 class="cc-title">WhatsApp</h3>
           <p class="cc-sub">Escríbeme directamente</p>
-          <span class="cc-handle">952 351 862</span>
+          <span class="cc-handle">Escribir ahora</span>
         </a>
         <a href="https://www.instagram.com/psic_kath?igsh=bGg5eGM1cG5sdWNz"
            target="_blank" rel="noopener" class="contact-card cc-ig">
@@ -722,19 +768,6 @@
           <h3 class="cc-title">Instagram</h3>
           <p class="cc-sub">Sígueme y mira mi trabajo</p>
           <span class="cc-handle">@psic_kath</span>
-        </a>
-      </div>
-
-      <div class="therapy-box reveal">
-        <h3>🍄 Sesiones de Psicoterapia Privada</h3>
-        <p>
-          ¿Buscas un espacio seguro para trabajar en tu bienestar emocional?
-          Ofrezco sesiones individuales con perspectiva de género y enfoque en
-          derechos humanos — un espacio cálido, confidencial y libre de juicios.
-        </p>
-        <a href="https://wa.me/51952351862?text=Hola%20Katherine%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20psicoterapia%20privada%20%F0%9F%8C%BF"
-           target="_blank" rel="noopener" class="therapy-btn">
-          💬 Solicitar una sesión
         </a>
       </div>
     </div>
@@ -745,22 +778,18 @@
 <!-- ─── FOOTER ─── -->
 <footer>
   <p class="ft-title">Psic. Katherine Ramos · Psicóloga Social</p>
-  <p>🐸 Lima, Perú &nbsp;·&nbsp; 🍄 Psicoterapia &nbsp;·&nbsp; 🌿 Comunidad</p>
+  <p><img src="imagenes/sapo.jpeg" class="sapo-inline" alt=""> Lima, Perú &nbsp;·&nbsp; 🍄 Orientación y Consejería &nbsp;·&nbsp; 🌿 Comunidad</p>
   <p>
-    <a href="https://wa.me/51952351862" target="_blank">WhatsApp: 952 351 862</a>
+    <a href="https://wa.me/51952351862" target="_blank">WhatsApp</a>
     &nbsp;·&nbsp;
     <a href="https://www.instagram.com/psic_kath?igsh=bGg5eGM1cG5sdWNz" target="_blank">@psic_kath</a>
   </p>
   <p style="margin-top:0.4rem; font-size:0.8rem;">
     Hecho con <span class="ft-heart">♥</span> y compromiso social · 2025
   </p>
-  <p style="margin-top:0.3rem; font-size:0.82rem;">
-    Hecho con amor por tu Saponcito 🐸
-  </p>
 </footer>
 
 <script>
-/* ── Fotos por categoría ── */
 const PHOTOS = {
   aahh: [
     'FOTOS/aahh-01.jpeg',
@@ -802,7 +831,6 @@ const PHOTOS = {
   ],
 };
 
-/* ── Intersection Observer ── */
 const obs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
@@ -812,7 +840,6 @@ function observeCards(nodes) {
 }
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-/* ── Construir grids de fotos ── */
 function buildGrids() {
   Object.entries(PHOTOS).forEach(([key, paths]) => {
     const grid = document.getElementById('grid-' + key);
@@ -830,7 +857,6 @@ function buildGrids() {
   });
 }
 
-/* ── Tabs ── */
 function showTab(name, btn) {
   document.querySelectorAll('.subsec').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -839,7 +865,6 @@ function showTab(name, btn) {
   observeCards(document.querySelectorAll('#grid-' + name + ' .photo-card'));
 }
 
-/* ── Lightbox ── */
 function openLb(src) {
   document.getElementById('lb-img').src = src;
   document.getElementById('lightbox').classList.add('open');
@@ -852,7 +877,6 @@ function closeLb() {
 function lbOut(e) { if (e.target === document.getElementById('lightbox')) closeLb(); }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
 
-/* ── Nav ── */
 function toggleNav() {
   const open = document.getElementById('navLinks').classList.toggle('open');
   document.getElementById('burger').classList.toggle('open', open);
@@ -865,7 +889,6 @@ window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
 });
 
-/* ── Init ── */
 buildGrids();
 </script>
 </body>
